@@ -137,7 +137,6 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                 )}
               </FormLabel>
               <FormControl className="flex-1 text-base-semibold text-gray-200">
-                <FormMessage />
                 <Input
                   type="file"
                   accept="image/*"
@@ -160,7 +159,6 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                 Name
               </FormLabel>
               <FormControl>
-                <FormMessage />
                 <Input
                   type="text"
                   className="account-form_input no-focus"
@@ -180,7 +178,6 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                 Username
               </FormLabel>
               <FormControl>
-                <FormMessage />
                 <Input
                   type="text"
                   className="account-form_input no-focus"
@@ -200,7 +197,6 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                 Bio
               </FormLabel>
               <FormControl>
-                <FormMessage />
                 <Textarea
                   rows={10}
                   className="account-form_input no-focus"

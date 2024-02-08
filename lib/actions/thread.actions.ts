@@ -37,3 +37,33 @@ export async function createThread({
 
 
 }
+
+export async function fetchThreads(pageNumber = 1, pageSize = 20) {
+    connectToDB();
+
+    // Calculate the number of threads to skip depending on the page
+    const skipAmount = (pageNumber - 1) * pageSize;
+
+    // Fetch the threads that have no parents (top-level threads...)
+    const threadsQuery = Thread.find({ parentId: { $in: [null, undefined] } })
+        .sort({ createdAt: 'desc' })
+        .skip(skipAmount)
+        .limit(pageSize)
+        .populate({ path: 'author', model: User })
+        .populate({
+            path: 'children',
+            populate: {
+                path: 'author',
+                model: User,
+                select: "_id name parentId image"
+            }
+        })
+
+    const totalPostsCount = await Thread.countDocuments({ parentId: { $in: [null, undefined] } })
+
+    const posts = await threadsQuery.exec();
+
+    const isNext = totalPostsCount > skipAmount + posts.length;
+
+    return { posts, isNext }
+}

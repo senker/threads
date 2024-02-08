@@ -1,7 +1,10 @@
+"use client"
 import { fetchThreads } from "@/lib/actions/thread.actions";
 
 export default async function Home() {
   const result = await fetchThreads(1, 30);
+
+  console.log(result);
 
   return (
     <>

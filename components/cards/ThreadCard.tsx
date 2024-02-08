@@ -31,4 +31,14 @@ const ThreadCard = ({
   community,
   createdAt,
   comments,
-}: Props) => {};
+}: Props) => {
+    return (
+        <article>
+            <h2 className="text-small-regular text-light-2">
+                {content}
+            </h2>
+        </article>
+    )
+};
+
+export default ThreadCard;

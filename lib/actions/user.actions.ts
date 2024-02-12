@@ -71,8 +71,8 @@ export async function fetchUser(userId: string) {
     try {
         // Connect to the database
         connectToDB();
-        return await User.findOne({ id: userId })/* .populate({ path: 'communities', model: Community }) */
         // Find and return the user with the specified user ID
+        return await User.findOne({ id: userId })/* .populate({ path: 'communities', model: Community }) */
     } catch (error: any) {
         // If an error occurs during fetching user, throw an error with a descriptive message
         throw new Error(`Failed to fetch user: ${error.message}`)

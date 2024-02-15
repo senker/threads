@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import Image from 'next/image';
 import React from 'react';
@@ -14,7 +14,7 @@ interface Props {
 }
 
 const UserCard = ({ id, name, username, imgUrl, personType }: Props) => {
-    const router = useRouter();
+  const router = useRouter();
 
   return (
     <article className="user-card">
@@ -30,10 +30,13 @@ const UserCard = ({ id, name, username, imgUrl, personType }: Props) => {
           <h4 className="text-base-semibold text-light-1">{name}</h4>
           <p className="text-small-medium text-gray-1">@{username}</p>
         </div>
-          </div>
-          <Button className='user-card_btn' onClick={() => router.push(`/profile/${id}`)}>
-              View
-          </Button>
+      </div>
+      <Button
+        className="user-card_btn"
+        onClick={() => router.push(`/profile/${id}`)}
+      >
+        View
+      </Button>
     </article>
   );
 };

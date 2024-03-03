@@ -20,14 +20,6 @@ To get started with Threads, follow these steps:
 3. **Start the App**: `npm start` or `yarn start`
 4. **Explore Threads**: Open your browser and navigate to `http://localhost:3000` to start exploring threads.
 
-## Contributing
-
-Contributions are welcome! If you'd like to contribute to Threads, please follow these guidelines:
-
-- Fork the repository and create your branch (`git checkout -b feature/your-feature`).
-- Commit your changes (`git commit -am 'Add feature'`).
-- Push to the branch (`git push origin feature/your-feature`).
-- Create a new Pull Request.
 
 ## Acknowledgements
 

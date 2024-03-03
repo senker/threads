@@ -20,7 +20,6 @@ To get started with Threads, follow these steps:
 3. **Start the App**: `npm start` or `yarn start`
 4. **Explore Threads**: Open your browser and navigate to `http://localhost:3000` to start exploring threads.
 
-
 ## Acknowledgements
 
 Special thanks to the contributors and supporters of Threads!

@@ -1,7 +1,9 @@
 import { fetchUser, fetchUsers } from '@/lib/actions/user.actions';
-import { currentUser } from '@clerk/nextjs';
+import { currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 import UserCard from '@/components/cards/UserCard';
+
+export const dynamic = 'force-dynamic';
 
 const Page = async () => {
   const user = await currentUser();

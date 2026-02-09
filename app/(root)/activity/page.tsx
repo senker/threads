@@ -1,8 +1,10 @@
 import { fetchUser, getActivity } from '@/lib/actions/user.actions';
-import { currentUser } from '@clerk/nextjs';
+import { currentUser } from '@clerk/nextjs/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
+
+export const dynamic = 'force-dynamic';
 
 const Page = async () => {
   const user = await currentUser();

@@ -2,8 +2,10 @@ import ThreadCard from '@/components/cards/ThreadCard';
 import Comment from '@/components/forms/Comment';
 import { fetchThreadById } from '@/lib/actions/thread.actions';
 import { fetchUser } from '@/lib/actions/user.actions';
-import { currentUser } from '@clerk/nextjs';
+import { currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
+
+export const dynamic = 'force-dynamic';
 
 const Page = async ({ params }: { params: { id: string } }) => {
   if (!params.id) return null;

@@ -1,12 +1,14 @@
 import PostThread from '@/components/forms/PostThread';
 import ProfileHeader from '@/components/shared/ProfileHeader';
 import { fetchUser } from '@/lib/actions/user.actions';
-import { currentUser } from '@clerk/nextjs';
+import { currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Image from 'next/image';
 import { profileTabs } from '@/constants';
 import ThreadsTab from '@/components/shared/ThreadsTab';
+
+export const dynamic = 'force-dynamic';
 
 const Page = async ({ params }: { params: { id: string } }) => {
   const user = await currentUser();

@@ -1,7 +1,9 @@
 import PostThread from '@/components/forms/PostThread';
 import { fetchUser } from '@/lib/actions/user.actions';
-import { currentUser } from '@clerk/nextjs';
+import { currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
+
+export const dynamic = 'force-dynamic';
 
 async function Page() {
   const user = await currentUser();
